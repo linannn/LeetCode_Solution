@@ -14,6 +14,7 @@
 
 class Solution:
     def insertionSortList(self, head: ListNode) -> ListNode:
+        # 我的
         root = ListNode(-float('inf'))
         root.next = head
         last = root
@@ -35,4 +36,14 @@ class Solution:
 
         return root.next
 
+        # root = ListNode(-float('inf'))
+        # while head:
+        #     tmp = head.next
+        #     pre = root
+        #     while pre.next and pre.next.val < head.val:
+        #         pre = pre.next
+        #     head.next = pre.next
+        #     pre.next = head
+        #     head = tmp
+        # return root.next
 # @lc code=end

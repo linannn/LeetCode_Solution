@@ -18,17 +18,18 @@ class Solution {
         }
         char tmp;
         for (int i = 0; i < 9; i++) {
-            for (int j = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
                 tmp = board[i][j];
                 if (tmp == '.')
                     continue;
                 if (colSet[j].contains(tmp) || rowSet[i].contains(tmp)
-                || unitSet[i/3+j/3].contains(tmp))
+                || unitSet[(i / 3 ) * 3 + j / 3].contains(tmp)){
                     return false;
+                }
                 else{
                     colSet[j].add(tmp);
                     rowSet[i].add(tmp);
-                    unitSet[i/3+j/3].add(tmp);
+                    unitSet[(i / 3 ) * 3 + j / 3].add(tmp);
                 }
             }
 
